@@ -37,7 +37,7 @@ Edit `$SAPIENS_ROOT/pose/configs/sapiens_pose/$DATASET/sapiens_1b-210e_$DATASET-
 1. Set `pretrained_checkpoint` to your checkpoint path.
 2. Update `train_dataloader.dataset.data_root` and `val_dataloader.dataset.data_root` to your `$DATA_ROOT`. eg. ```data/coco```.
 3. Update ```val_evaluator.ann_file``` to also point to validation annotation file under `$DATA_ROOT`.
-
+4. Update `bbox_file` to point to the bounding box detection file under `$DATA_ROOT`.
 
 ## 🏋️ 3. Finetuning
 
@@ -58,7 +58,7 @@ Key variables:
 - `mode=multi-gpu`: Launch multi-gpu training with multiple workers for dataloading.
 - `mode=debug`: (Optional) To debug. Launched single gpu dry run, with single worker for dataloading. Supports interactive debugging with pdb/ipdb.
 
-Note, if you wish to finetune from an existing normal estimation checkpoint, set the `LOAD_FROM` variable.
+Note, if you wish to finetune from an existing pose estimation checkpoint, set the `LOAD_FROM` variable.
 
 Launch:
 ```bash

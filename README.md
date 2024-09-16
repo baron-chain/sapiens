@@ -115,6 +115,9 @@ Finetuning our models is super-easy! Here is a detailed training guide for the f
 - ### [Depth Estimation](docs/finetune/DEPTH_README.md)
 - ### [Surface Normal Estimation](docs/finetune/NORMAL_README.md)
 
+## 📈 Quantitative Evaluations
+- ### [Pose Estimation](docs/evaluate/POSE_README.md)
+
 ## 🤝 Acknowledgements & Support & Contributing
 We would like to acknowledge the work by [OpenMMLab](https://github.com/open-mmlab) which this project benefits from.\
 For any questions or issues, please open an issue in the repository.\

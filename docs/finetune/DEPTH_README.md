@@ -56,7 +56,7 @@ Key variables:
 - `mode=multi-gpu`: Launch multi-gpu training with multiple workers for dataloading.
 - `mode=debug`: (Optional) To debug. Launched single gpu dry run, with single worker for dataloading. Supports interactive debugging with pdb/ipdb.
 
-Note, if you wish to finetune from an existing normal estimation checkpoint, set the `LOAD_FROM` variable.
+Note, if you wish to finetune from an existing depth estimation checkpoint, set the `LOAD_FROM` variable.
 
 Launch:
 ```bash
