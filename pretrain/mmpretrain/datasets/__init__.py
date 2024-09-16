@@ -5,6 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 from mmpretrain.utils.dependency import WITH_MULTIMODAL
+
 from .base_dataset import BaseDataset
 from .builder import build_dataset
 from .caltech101 import Caltech101
@@ -18,7 +19,7 @@ from .flowers102 import Flowers102
 from .food101 import Food101
 from .imagenet import ImageNet, ImageNet21k
 from .inshop import InShop
-from .mnist import MNIST, FashionMNIST
+from .mnist import FashionMNIST, MNIST
 from .multi_label import MultiLabelDataset
 from .multi_task import MultiTaskDataset
 from .nlvr2 import NLVR2
@@ -31,21 +32,41 @@ from .transforms import *  # noqa: F401,F403
 from .voc import VOC
 
 __all__ = [
-    'BaseDataset', 'CIFAR10', 'CIFAR100', 'CUB', 'Caltech101', 'CustomDataset',
-    'DTD', 'FGVCAircraft', 'FashionMNIST', 'Flowers102', 'Food101', 'ImageNet',
-    'ImageNet21k', 'InShop', 'KFoldDataset', 'MNIST', 'MultiLabelDataset',
-    'MultiTaskDataset', 'NLVR2', 'OxfordIIITPet', 'Places205', 'SUN397',
-    'StanfordCars', 'VOC', 'build_dataset',
+    "BaseDataset",
+    "CIFAR10",
+    "CIFAR100",
+    "CUB",
+    "Caltech101",
+    "CustomDataset",
+    "DTD",
+    "FGVCAircraft",
+    "FashionMNIST",
+    "Flowers102",
+    "Food101",
+    "ImageNet",
+    "ImageNet21k",
+    "InShop",
+    "KFoldDataset",
+    "MNIST",
+    "MultiLabelDataset",
+    "MultiTaskDataset",
+    "NLVR2",
+    "OxfordIIITPet",
+    "Places205",
+    "SUN397",
+    "StanfordCars",
+    "VOC",
+    "build_dataset",
 ]
 
 try:
-    from .humans_300m import Humans300M
     from .dataset_wrappers import CombinedDataset
-    __all__ += ['Humans300M', 'CombinedDataset']
+    from .humans_300m import Humans300M
+
+    __all__ += ["Humans300M", "CombinedDataset"]
 
 except Exception as e:
-    print(e)
-    print('\033[93m' + 'Warning! Make sure you are not training.' + '\033[0m')
+    pass
 
 if WITH_MULTIMODAL:
     from .coco_caption import COCOCaption
@@ -66,9 +87,25 @@ if WITH_MULTIMODAL:
     from .vizwiz import VizWiz
     from .vsr import VSR
 
-    __all__.extend([
-        'COCOCaption', 'COCORetrieval', 'COCOVQA', 'FlamingoEvalCOCOCaption',
-        'FlamingoEvalCOCOVQA', 'Flickr30kCaption', 'Flickr30kRetrieval',
-        'RefCOCO', 'VisualGenomeQA', 'ScienceQA', 'NoCaps', 'GQA', 'TextVQA',
-        'VSR', 'VizWiz', 'OCRVQA', 'InfographicVQA', 'IconQA'
-    ])
+    __all__.extend(
+        [
+            "COCOCaption",
+            "COCORetrieval",
+            "COCOVQA",
+            "FlamingoEvalCOCOCaption",
+            "FlamingoEvalCOCOVQA",
+            "Flickr30kCaption",
+            "Flickr30kRetrieval",
+            "RefCOCO",
+            "VisualGenomeQA",
+            "ScienceQA",
+            "NoCaps",
+            "GQA",
+            "TextVQA",
+            "VSR",
+            "VizWiz",
+            "OCRVQA",
+            "InfographicVQA",
+            "IconQA",
+        ]
+    )
