@@ -76,6 +76,8 @@ cd $SAPIENS_ROOT/pose/scripts/test/$DATASET/sapiens_1b
 Sapiens achieve state-of-the-art results for keypoint estimation on both datasets. Below we compare them with existing methods.
 
 ### COCO-WholeBody - 133 Keypoints
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sapiens-foundation-for-human-vision-models/2d-human-pose-estimation-on-coco-wholebody-1)](https://paperswithcode.com/sota/2d-human-pose-estimation-on-coco-wholebody-1?p=sapiens-foundation-for-human-vision-models)
+
 |        Model        | Input Size | Body AP | Body AR | Feet AP | Feet AR | Face AP | Face AR | Hand AP | Hand AR | Whole AP | Whole AR | Config | Ckpt |
 | :-----------------: | :--------: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :--------: | :--------: | :----: | :--------: |
 | DeepPose | 384 × 288 | 44.4 | 56.8 | 36.8 | 53.7 | 49.3 | 66.3 | 23.5 | 41.0 | 33.5 | 48.4 | - | - |
