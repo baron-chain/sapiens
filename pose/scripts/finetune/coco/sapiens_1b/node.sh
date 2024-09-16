@@ -9,10 +9,10 @@ PORT=$(( ((RANDOM<<15)|RANDOM) % 63001 + 2000 ))
 
 ##---------copy this to the slurm script-----------------
 ####-----------------MODEL_CARD----------------------------
-DATASET='coco_mpii_crowdpose_aic'
-MODEL="sapiens_0.3b-210e_${DATASET}-1024x768"
+DATASET='coco'
+MODEL="sapiens_1b-210e_${DATASET}-1024x768"
 JOB_NAME="pose_$MODEL"
-TRAIN_BATCH_SIZE_PER_GPU=10
+TRAIN_BATCH_SIZE_PER_GPU=4
 
 RESUME_FROM=''
 LOAD_FROM=''

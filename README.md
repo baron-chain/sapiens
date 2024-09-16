@@ -110,7 +110,7 @@ We finetune sapiens for multiple human-centric vision tasks. Please checkout the
 
 ## 🎯 Easy Steps to Finetuning Sapiens
 Finetuning our models is super-easy! Here is a detailed training guide for the following tasks.
-- ### [Coming Soon] Pose
+- ### [Pose Estimation](docs/finetune/POSE_README.md)
 - ### [Body-Part Segmentation](docs/finetune/SEG_README.md)
 - ### [Depth Estimation](docs/finetune/DEPTH_README.md)
 - ### [Surface Normal Estimation](docs/finetune/NORMAL_README.md)

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ####-------------------MODEL_CARD----------------------------
-DATASET='coco_mpii_crowdpose_aic'
-MODEL="sapiens_2b-210e_${DATASET}-1024x768"
-JOB_NAME="pose_$MODEL"
-TRAIN_BATCH_SIZE_PER_GPU=2
+DATASET='coco_wholebody'
+MODEL="sapiens_1b-210e_${DATASET}-1024x768"
+JOB_NAME="pose_whole_$MODEL"
+TRAIN_BATCH_SIZE_PER_GPU=4
 
 RESUME_FROM=''
 LOAD_FROM=''
@@ -17,8 +17,6 @@ OUTPUT_DIR="Outputs/train/${DATASET}/${MODEL}/slurm"
 OUTPUT_DIR="$(echo "${OUTPUT_DIR}/$(date +"%m-%d-%Y_%H:%M:%S")")"
 CONDA_ENV='/uca/conda-envs/dgxenv-2023-09-25-7853/bin/activate'
 TIME='7-00:00:00'
-# TIME='0-12:00:00'
-
 JOB_NAME="${JOB_NAME}"
 WORLD_SIZE=$(($NUM_NODES * 8))
 
@@ -58,7 +56,6 @@ cat > $SCRIPT <<EOL
 #SBATCH --cpus-per-task=32
 #SBATCH --output=${ROOT_DIR}/${OUTPUT_DIR}/slurm/%j.out
 #SBATCH --error=${ROOT_DIR}/${OUTPUT_DIR}/slurm/%j.err
-#SBATCH --exclude=avalearn1992,avalearn1931  # Exclude the node avalearn1992
 
 cd $ROOT_DIR
 

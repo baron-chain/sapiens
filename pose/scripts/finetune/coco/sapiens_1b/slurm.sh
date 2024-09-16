@@ -1,21 +1,21 @@
 #!/bin/bash
 
 ####-------------------MODEL_CARD----------------------------
-DATASET='goliath'
-MODEL="sapiens_0.3b-210e_${DATASET}-1024x768"
+DATASET='coco'
+MODEL="sapiens_1b-210e_${DATASET}-1024x768"
 JOB_NAME="pose_$MODEL"
-TRAIN_BATCH_SIZE_PER_GPU=10
+TRAIN_BATCH_SIZE_PER_GPU=4
 
 RESUME_FROM=''
 LOAD_FROM=''
 
-NUM_NODES=4
+NUM_NODES=2
 
 ##------------------------------------------------------------
 CONFIG_FILE=configs/sapiens_pose/${DATASET}/${MODEL}.py
 OUTPUT_DIR="Outputs/train/${DATASET}/${MODEL}/slurm"
 OUTPUT_DIR="$(echo "${OUTPUT_DIR}/$(date +"%m-%d-%Y_%H:%M:%S")")"
-CONDA_ENV="/uca/conda-envs/dgxenv-2024-07-25-10-44-26-x6252-centos9-py310-pt231/bin/activate"
+CONDA_ENV='/uca/conda-envs/dgxenv-2023-09-25-7853/bin/activate'
 TIME='7-00:00:00'
 JOB_NAME="${JOB_NAME}"
 WORLD_SIZE=$(($NUM_NODES * 8))
